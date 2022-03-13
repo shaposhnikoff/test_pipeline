@@ -13,8 +13,8 @@ pipeline {
     stages {
         stage('Generate AMI for Jenkins Slave') {
             steps {
-                git url: "git@github.com:knockrentals/ami_builder.git",
-                    branch: "jenkins_slave"
+                git url: "https://github.com/shaposhnikoff/test_pipeline.git",
+                    branch: "main"
                 sh '''
                     cd jenkins_slave_ami_ubuntu
 		    
