@@ -14,7 +14,7 @@ pipeline {
         stage('Generate AMI for Jenkins Slave') {
             steps {
                 git url: "https://github.com/shaposhnikoff/test_pipeline.git",
-		branch: ${parameter1}
+		branch: "${parameter1}"
                 sh '''
                     		    
 		    ami_base=$parameter1
