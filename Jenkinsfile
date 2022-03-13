@@ -16,12 +16,12 @@ pipeline {
                 git url: "https://github.com/shaposhnikoff/test_pipeline.git",
                     branch: "main"
                 sh '''
-                    cd jenkins_slave_ami_ubuntu
-		    
-		    ami_base=`aws ssm get-parameters --names \
-		    /aws/service/canonical/ubuntu/server/20.04/stable/current/amd64/hvm/ebs-gp2/ami-id \
-		    --region us-east-1 --query 'Parameters[0].Value' --output text`
-                    packer build -on-error abort -machine-readable jenkins.json | tee build.log
+                    		    
+		    ami_base=$parameter1
+                    echo $parameter1
+		    echo $parameter2
+		    echo $parameter3
+		    packer build -on-error abort -machine-readable jenkins.json | tee build.log
                 '''
             }
         }
