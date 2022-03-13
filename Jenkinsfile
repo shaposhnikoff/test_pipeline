@@ -1,6 +1,6 @@
   
 pipeline {
-    agent any
+    agent { label "${parameter4}" }
     
     options {
     ansiColor('xterm')
